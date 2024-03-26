@@ -63,17 +63,18 @@ export const ExpensesContext = createContext({
   deleteExpense: (id) => {},
   updateExpense: (id, { description, amount, date }) => {},
 });
+
 function expensesReducer(state, action) {
   switch (action.type) {
     case "add":
-      const id = newDate().toString() + Math.random().toString();
+      const id = new Date().toString() + Math.random().toString();
       return [{ ...action.payload, id: id }, ...state];
     case "update":
       const updatableExpenseIndex = state.findIndex(
         (expense) => expense.id === action.payload.id
       );
       const updatableExpense = state[updatableExpenseIndex];
-      const updatedItem = { ...updateExpense, ...action.payload.data };
+      const updatedItem = { ...updatableExpense, ...action.payload.data };
       const updatedExpenses = [...state];
       updatedExpenses[updatableExpenseIndex] = updatedItem;
       return updatedExpenses;
