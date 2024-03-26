@@ -20,7 +20,7 @@ const DUMMY_EXPENSES = [
   {
     id: "e3",
     description: "Chipotle",
-    amount: 24.1,
+    amount: 24.11,
     date: new Date("2024-02-15"),
   },
   {
@@ -44,7 +44,7 @@ const DUMMY_EXPENSES = [
   {
     id: "e7",
     description: "Chipotle",
-    amount: 24.1,
+    amount: 24.11,
     date: new Date("2024-02-15"),
   },
   {
